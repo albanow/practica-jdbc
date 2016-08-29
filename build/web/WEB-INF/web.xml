@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>ServletConfigurator</servlet-name>
+        <servlet-class>org.logicalcobwebs.proxool.configuration.ServletConfigurator</servlet-class>
+        <init-param>
+            <param-name>propertyFile</param-name>
+            <param-value>WEB-INF/proxool.properties</param-value>
+        </init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>DrawTable</servlet-name>
+        <servlet-class>com.servlets.DrawTable</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaginaLetra</servlet-name>
+        <servlet-class>com.servlets.PaginaLetra</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DrawTable</servlet-name>
+        <url-pattern>/DrawTable</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaginaLetra</servlet-name>
+        <url-pattern>/PaginaLetra</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
